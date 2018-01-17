@@ -1,0 +1,90 @@
+﻿@model AplicacaoHinova.Models.Pessoa
+
+@{
+    ViewBag.Title = "Novo";
+}
+
+<h2>Indicar</h2>
+<form>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label>Código Associado</label> :
+            <br />
+            <input type="text" name="CodigoAssociacao"  class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label>CPF Associado</label> :
+            <br />
+            <input type="text" name="CpfAssociado" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Data de Criação</label> :
+            <br />
+            <input type="datetime" name="DataCriacao" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Email Associado</label> :
+            <br />
+            <input type="email" name="EmailAssociado" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Nome Associado</label> :
+            <br />
+            <input type="text" name="NomeAssociado" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Telefone Associado</label> :
+            <br />
+            <input type="tel" name="TelefoneAssociado" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Placa de Veiculo Associado</label> :
+            <br />
+            <input type="number" name="PlacaVeiculoAssociado"  class="form-control"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Nome do Amigo</label> :
+            <br />
+            <input type="text" name="NomeAmigo"  class="form-control"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Telefone do Amigo</label> :
+            <br />
+            <input type="tel" name="TelefoneAmigo"   class="form-control"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Email do Amigo</label> :
+            <br />
+            <input type="email" name="EmailAmigo"  class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Observação</label> :
+            <br />
+            <textarea name="Observacao"  class="form-control">
+        </textarea>
+        </div>
+        <br />
+        <input type="button" class="form-control" id="btnEnviar" value="Enviar" /><br />
+
+         </div>
+</form>
+
+<script type="text/javascript">
+    $("#btnEnviar").click( function() {
+        $.post("http://app.hinovamobile.com.br/ProvaConhecimentoWebApi/Api/Indicacao",
+               $("form").serialize(),
+               function (result) {
+                   alert(result);
+               });
+    });
+
+</script>

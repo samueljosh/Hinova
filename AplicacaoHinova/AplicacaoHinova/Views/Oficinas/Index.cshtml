@@ -1,0 +1,102 @@
+﻿@model IEnumerable<AplicacaoHinova.Models.Oficina>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    #gridHinova {
+        display: inline !important;
+    }
+    #gridHinova th {
+        padding: 50px !important;
+
+    }
+</style>
+<h2>Lista de Oficinas</h2>
+<div class="table-responsive" style="overflow: auto!important; width: 1200px!important;">
+    <table class="table table-striped" id="gridHinova">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoCurta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+ 
+            <th>
+                @Html.DisplayNameFor(model => model.AvaliacaoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoAssociacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>Ações</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoCurta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+   
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvaliacaoUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodigoAssociacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+ 
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
