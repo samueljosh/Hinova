@@ -16,7 +16,7 @@ namespace AplicacaoHinova
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Menu", action = "AplicacaoHinova", id = UrlParameter.Optional }
+                defaults: new { controller = "Oficinas", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
